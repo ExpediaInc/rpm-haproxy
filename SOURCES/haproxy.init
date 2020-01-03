@@ -89,7 +89,7 @@ restart() {
 
 reload() {
   if ! [ -s $PIDFILE ]; then
-    return 0
+    start
   fi
 
   quiet_check
