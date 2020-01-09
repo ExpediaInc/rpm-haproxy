@@ -88,7 +88,8 @@ restart() {
 }
 
 reload() {
-  if ! [ -s $PIDFILE ]; then
+  PID=$(cat $PIDFILE)
+  if [[ ! -s $PIDFILE || ! -e /proc/$PID ]]; then
     start
   fi
 
